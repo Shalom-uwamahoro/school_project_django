@@ -3,19 +3,20 @@ from django.db import models
 # Create your models here.
 
 class Class(models.Model):
-        class_name = models.CharField(max_length=100)
-        class_id = models.CharField(max_length=10)
-        class_teacher = models.CharField(max_length=10)
-        room_number = models.PositiveSmallIntegerField()
-        meeting_time = models.TimeField()
-        class_enrollement= models.TimeField()
-        max_students = models.PositiveSmallIntegerField()
-        academic_year = models.PositiveSmallIntegerField()
-        capacity = models.PositiveSmallIntegerField()
-        course= models.CharField(max_length=100)
-        
-        def __str__(self):
-            return f"{self.class_name} {self.class_id}"
+    start_date = models.DateField()
+    end_date = models.DateField()
+    class_name = models.CharField(max_length=20)
+    class_description = models.TextField()
+    school_year = models.IntegerField()
+    capacity = models.PositiveIntegerField()
+    room_number = models.PositiveIntegerField()
+    grade_level = models.IntegerField()
+    class_best_subject = models.CharField(max_length=30)
+    class_specialty = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.class_name
+
 
 
 
