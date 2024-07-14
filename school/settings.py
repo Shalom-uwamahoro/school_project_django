@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     "student_class",  
     "course", 
     "student", 
-    "teacher",     #the only thing I added here, the name of the app I created
+    "teacher", 
+    "api",
+    "rest_framework",
+    "classperiod",
 ]
 
 MIDDLEWARE = [
