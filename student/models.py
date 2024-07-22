@@ -18,6 +18,8 @@ class Student(models.Model):
     guardian_phone_number = models.CharField(max_length=15)
     guardian_name = models.CharField(max_length=100)
     class_enrolled = models.ForeignKey(Student_Class, on_delete=models.SET_NULL, null=True, related_name='students')
-    picture = models.ImageField()
+    picture = models.ImageField(upload_to='student_pictures/', blank=True, null=True)
+    
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+    
