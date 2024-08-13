@@ -1,6 +1,7 @@
 from django.db import models
 
 from student_class.models import Student_Class
+from course.models import Course
 
 # Create your models here.
 
@@ -17,6 +18,7 @@ class Student(models.Model):
     enrollment_date = models.DateField()
     guardian_phone_number = models.CharField(max_length=15)
     guardian_name = models.CharField(max_length=100)
+    # course = models.ManyToManyField(Course)
     class_enrolled = models.ForeignKey(Student_Class, on_delete=models.SET_NULL, null=True, related_name='students')
     picture = models.ImageField(upload_to='student_pictures/', blank=True, null=True)
     
