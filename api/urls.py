@@ -5,6 +5,9 @@ from .views import StudentListView, Student_ClassListView, TeacherListView, Cour
 
 urlpatterns = [
     path('students/', StudentListView.as_view(), name ="student_list_view"),
+    # path('students/', MinimalStudentSerializer.as_view(), name ="student_minimal_view"),
+
+    
     path('student_classes/', Student_ClassListView.as_view(),name = "student_class_list_view"),
     path('teachers/', TeacherListView.as_view(),name = "teacher_list_view"),
     path('courses/', CourseListView.as_view(),name = "course_list_view"),
